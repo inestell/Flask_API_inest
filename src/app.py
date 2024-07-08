@@ -13,14 +13,14 @@ def hello_world():
 def add_new_todo():
     request_body = request.json
     todos.append(request_body)
-    json_todo_list = jsonify(todos)
-    return json_todo_list
+    json_todolist = jsonify(todos)
+    return json_todolist
 
 @app.route('/todos/<int:position>', methods=['DELETE'])
 def delete_todo(position):
     todos.pop(position)
-    json_todo_list = jsonify(todos)
-    return json_todo_list
+    json_todolist = jsonify(todos)
+    return json_todolist
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=3245, debug=True)
